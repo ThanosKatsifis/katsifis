@@ -1,0 +1,364 @@
+<style>
+  /* Import High-End Developer Coding Font */
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+  :root {
+    --bg-main: #0a0c10;
+    --bg-card: #12161f;
+    --border-color: #21262d;
+    --accent-purple: #8a2be2;
+    --accent-green: #00ff7f;
+    --text-main: #f0f6fc;
+    --text-muted: #8b949e;
+    --font-coder: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: var(--font-coder);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-main);
+  }
+
+  .dev-portfolio {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  /* --- 1. HERO CONSOLE SECTION --- */
+  .hero-container {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1100px;
+    width: 100%;
+    padding: 100px 0 60px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .terminal-status {
+    color: var(--accent-green);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+
+  .hero-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    letter-spacing: -2px;
+    line-height: 1.1;
+  }
+
+  .hero-title span {
+    color: var(--accent-purple);
+  }
+
+  .hero-bio {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    line-height: 1.7;
+    margin: 0 0 35px 0;
+  }
+
+  .console-btn {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .console-btn:hover {
+    background: var(--text-main);
+    color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(240, 246, 252, 0.2);
+  }
+
+  /* --- 2. TECH STACK SHELL MARQUEE --- */
+  .tech-marquee-section {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .marquee-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .tech-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tech-badge {
+    background: #161b22;
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+  }
+
+  /* --- 3. EXPANDED PROJECTS GRID --- */
+  .projects-section {
+    width: 100%;
+    max-width: 1100px;
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* Refined Animated Cards */
+  .project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 32px;
+    width: calc(33.333% - 16px);
+    min-width: 320px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover Performance Engine */
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 12px 30px rgba(138, 43, 226, 0.15);
+  }
+
+  .card-tags {
+    font-size: 0.75rem;
+    color: var(--accent-purple);
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 8px 0;
+  }
+
+  .card-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .card-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    margin-top: auto;
+    width: fit-content;
+  }
+
+  .card-link:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+  }
+
+  /* --- 4. INTERACTIVE SHELL TERMINAL FOOTER --- */
+  .terminal-footer {
+    width: 100%;
+    max-width: 1100px;
+    padding: 80px 0 100px 0;
+  }
+
+  .terminal-window {
+    background: #0d1117;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    width: 100%;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .terminal-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(33, 38, 45, 0.5);
+    padding-bottom: 12px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot-r { background: #ff5f56; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #27c93f; }
+
+  .terminal-line {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .cmd { color: var(--accent-green); }
+  .output { color: var(--text-muted); }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Responsive Fixes */
+  @media(max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .project-card { width: 100%; }
+  }
+</style>
+
+<div class="dev-portfolio">
+
+  <section class="hero-container">
+    <div class="terminal-status">
+      <div class="status-dot"></div>
+      <span>katsifis.local://active_production</span>
+    </div>
+    <h1 class="hero-title">Thanos <span>Katsifis</span></h1>
+    <p class="hero-subtitle" style="display:none;">Legacy holder</p>
+    <p class="hero-bio">
+      Software engineer specializing in core Python automation pipelines, contextual machine learning systems, and responsive desktop human interfaces. Turning algorithmic logic into practical deployment models.
+    </p>
+    <a href="#projects-grid-anchor" class="console-btn">execute --view-projects</a>
+  </section>
+
+  <section class="tech-marquee-section">
+    <div class="marquee-label">Core Compilations & Frameworks</div>
+    <div class="tech-badge-container">
+      <div class="tech-badge">Python 3.x</div>
+      <div class="tech-badge">PyTorch</div>
+      <div class="tech-badge">OpenAI API</div>
+      <div class="tech-badge">CNN Architectures</div>
+      <div class="tech-badge">Tkinter GUIs</div>
+      <div class="tech-badge">Asynchronous Threads</div>
+      <div class="tech-badge">Git Versioning</div>
+      <div class="tech-badge">Data Augmentation</div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects-grid-anchor">
+    <div class="section-header">
+      <h2>Project Repositories</h2>
+      <p>Custom software layers executed and open-sourced via GitHub.</p>
+    </div>
+
+    <div class="projects-grid">
+      
+      <div class="project-card">
+        <div>
+          <div class="card-tags">OPENAI IMAGE API / TKINTER / PYTHON</div>
+          <h3 class="card-title">AI 3D Design Generator</h3>
+          <p class="card-desc">A desktop engineering tool executing textual prompt conversions into high-resolution 1024x1024 3D-style assets. Built-in image caching gallery with integrated keybinding matrix mapping and asset pipeline directory storage.</p>
+        </div>
+        <a href="https://github.com/ThanosKatsifis/Ai3dImageGenerator" target="_blank" class="card-link">Fetch Repository →</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="card-tags">PYTORCH / RESNET-18 / MULTI-THREADING</div>
+          <h3 class="card-title">Tkinter & PyTorch Classifier</h3>
+          <p class="card-desc">A macOS Sonoma-styled desktop app using a pretrained ResNet-18 backbone as a frozen feature extractor. Configured with separate asynchronous UI threads preventing interface freeze metrics during heavy optimization loops.</p>
+        </div>
+        <a href="https://github.com/ThanosKatsifis/ImageClassifierCustomTraining" target="_blank" class="card-link">Fetch Repository →</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="card-tags">GPT-3.5 TURBO / STATE LOGIC / TTKTHEMES</div>
+          <h3 class="card-title">SmartyPants AI Quizzer</h3>
+          <p class="card-desc">An interactive trivia application utilizing GPT-3.5 processing pipelines to stream runtime evaluation pools. Wrapped in a unified state tracking controller using the Yaru purple Linux environment framework.</p>
+        </div>
+        <a href="https://github.com/ThanosKatsifis/AiQuizGenerator" target="_blank" class="card-link">Fetch Repository →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="terminal-footer">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+      </div>
+      <div class="terminal-line"><span class="cmd">thanos@katsifis-dev:~$</span> cat contact_info.json</div>
+      <div class="terminal-line class output">{</div>
+      <div class="terminal-line class output">&nbsp;&nbsp;"location": "Athens, Greece",</div>
+      <div class="terminal-line class output">&nbsp;&nbsp;"github": "https://github.com/ThanosKatsifis",</div>
+      <div class="terminal-line class output">&nbsp;&nbsp;"status": "Available for pipeline infrastructure & engineering mandates"</div>
+      <div class="terminal-line class output">}</div>
+      <div class="terminal-line"><span class="cmd">thanos@katsifis-dev:~$</span> <span class="status-dot" style="display:inline-block; margin:0;"></span></div>
+    </div>
+  </section>
+
+</div>
